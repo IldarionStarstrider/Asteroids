@@ -4,7 +4,7 @@ from constants import *
 
 # class defining the player.
 class player(CircleShape):
-    def __init__(self, x, y):
+    def __init__(self, x, y, radius):
         super().__init__(x, y, PLAYER_RADIUS)
     rotation = 0
 
@@ -18,7 +18,7 @@ class player(CircleShape):
         return [a, b, c]
 
     def draw(self, screen):
-        white = pygame.color(255, 255, 255) 
+        white = pygame.Color(255, 255, 255) 
         try:
             pygame.draw.polygon(screen, white, self.triangle(), 2)
         except ValueError:
